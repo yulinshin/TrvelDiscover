@@ -11,7 +11,7 @@ import SwiftUI
 struct TrvelDiscoverApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            DiscoverView()
         }
     }
 }
