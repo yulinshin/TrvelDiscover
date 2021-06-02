@@ -7,12 +7,26 @@
 
 import SwiftUI
 
+struct NavigationLazyView<Content:View>: View {
+    
+    let build: () -> Content
+    
+    init(_ build: @autoclosure @escaping () -> Content) {
+        self.build = build
+    }
+    
+    var body: Content{
+        build()
+    }
+    
+}
+
 
 struct DiscoverCategoriesView: View {
     
     let categories : [Catrgory] = [
         .init(name: "Art", imagename: "paintpalette.fill"),
-        .init(name: "Sport", imagename: "sportscourt.fill"),
+        .init(name: "Sports", imagename: "sportscourt.fill"),
         .init(name: "Live Events", imagename: "music.mic"),
         .init(name: "Food", imagename: "seal.fill"),
         .init(name: "History", imagename: "books.vertical.fill"),
@@ -25,7 +39,7 @@ struct DiscoverCategoriesView: View {
                 ForEach(categories, id: \.self) { category in
                     
                   NavigationLink(
-                    destination: CategoryDetialView(),
+                    destination: NavigationLazyView(CategoryDetialView(name: category.name)),
                     label: {
                         VStack(spacing: 6){
                             Image(systemName: category.imagename)

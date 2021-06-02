@@ -4,10 +4,10 @@
 //
 //  Created by yulin on 2021/5/21.
 //
-struct AirtableRecords:Decodable {
-   var records : [AirTableRecord]
+struct CategorytableRecords:Decodable {
+   var records : [CategoryTableRecord]
 }
-struct AirTableRecord: Decodable,Hashable {
+struct CategoryTableRecord: Decodable,Hashable {
     var id : String
     var fields : Place
 }

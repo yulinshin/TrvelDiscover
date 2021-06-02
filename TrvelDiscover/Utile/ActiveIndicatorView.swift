@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct ActiveIndicatorView: UIViewRepresentable {  //製作UIKIT物件
     func makeUIView(context: Context) -> UIActivityIndicatorView {
         let aiv = UIActivityIndicatorView(style: .large)
@@ -21,10 +20,4 @@ struct ActiveIndicatorView: UIViewRepresentable {  //製作UIKIT物件
     typealias UIViewType = UIActivityIndicatorView
     
     
-}
-
-struct ActiveIndicatorView_Previews: PreviewProvider {
-    static var previews: some View {
-        ActiveIndicatorView()
-    }
 }
